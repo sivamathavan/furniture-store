@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Home Furniture | Custom Wooden Furniture in Coimbatore</title>
+    <meta name="description" content="Premium solid wood furniture in Coimbatore. Custom sofas, beds, dining tables and home decor. Heritage Home Furniture - Furniture That Feels Like Home.">
+    <meta name="keywords" content="Furniture Shop Coimbatore, Custom Furniture Coimbatore, Wooden Furniture Tamil Nadu, Best Furniture Store Coimbatore, Teak Wood Furniture">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        :root {
+            --walnut: #6B3F2A;
+            --walnut-dark: #4A2B1D;
+            --off-white: #F5F0EB;
+            --gold: #C9A96E;
+            --white: #FFFFFF;
+            --text-dark: #2D2D2D;
+            --text-muted: #7A7A7A;
+            --transition: all 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        /* --- Lifestyle Reveal --- */
+        .reveal {
+            opacity: 0;
+            transform: scale(0.98) translateY(30px);
+            transition: all 1.2s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        /* --- Walnut Glow --- */
+        .product-card:hover {
+            box-shadow: 0 0 40px rgba(107, 63, 42, 0.15);
+            border-color: var(--gold);
+        }
+
+        /* --- Magnetic --- */
+        .magnetic {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+
+        /* --- Hero Content Slide --- */
+        @keyframes heroSlide {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .hero-content { animation: heroSlide 1.5s cubic-bezier(0.19, 1, 0.22, 1) both; }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        h1, h2, h3, h4, .serif {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--walnut);
+        }
+
+        body {
+            background-color: var(--off-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(245, 240, 235, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(107, 63, 42, 0.1);
+        }
+
+        .logo {
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .logo-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--walnut);
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .logo-sub {
+            font-size: 0.7rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-top: 5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--walnut);
+            font-weight: 400;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .cta-btn {
+            background: var(--walnut);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: var(--transition);
+            border: 1px solid var(--walnut);
+        }
+
+        .cta-btn:hover {
+            background: transparent;
+            color: var(--walnut);
+        }
+
+        /* --- Hero --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
+                        url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 0 8%;
+        }
+
+        /* Broken Image Fallback */
+        img {
+            position: relative;
+        }
+
+        img::after {
+            content: "\f03e";
+            font-family: "Phosphor-Fill";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #eee;
+            color: #ccc;
+            font-size: 2rem;
+        }
+
+        .hero-content {
+            background: rgba(245, 240, 235, 0.9);
+            padding: 4rem;
+            max-width: 800px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        /* --- Category Strip --- */
+        .category-strip {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            padding: 3rem 8%;
+            background: var(--white);
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .category-strip::-webkit-scrollbar { display: none; }
+
+        .cat-item {
+            padding: 1rem 2.5rem;
+            border: 1px solid rgba(107, 63, 42, 0.2);
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cat-item:hover, .cat-item.active {
+            background: var(--walnut);
+            color: var(--white);
+            border-color: var(--walnut);
+        }
+
+        /* --- Sections --- */
+        section {
+            padding: 8rem 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .section-title span {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+        }
+
+        /* --- Product Grid --- */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+
+        .product-card {
+            background: var(--white);
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .product-card:hover {
+            box-shadow: 0 15px 40px rgba(107, 63, 42, 0.1);
+            transform: translateY(-10px);
+        }
+
+        .product-img {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 2.5rem;
+            text-align: center;
+        }
+
+        .product-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-info p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .wa-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--walnut);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-bottom: 1px solid var(--walnut);
+            padding-bottom: 5px;
+            transition: var(--transition);
+        }
+
+        .wa-btn:hover {
+            color: var(--gold);
+            border-color: var(--gold);
+        }
+
+        /* --- Why Choose Us --- */
+        .features {
+            background: var(--walnut);
+            color: var(--off-white);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+            padding: 6rem 8%;
+            text-align: center;
+        }
+
+        .feature-item i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-item h4 {
+            color: var(--white);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Home Reveals --- */
+        .reveals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .reveal-card {
+            position: relative;
+            height: 450px;
+            overflow: hidden;
+        }
+
+        .reveal-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .reveal-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(107, 63, 42, 0.9));
+            padding: 2.5rem;
+            color: var(--white);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .reveal-card:hover .reveal-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* --- Festive Banner --- */
+        .festive-banner {
+            background: linear-gradient(rgba(107, 63, 42, 0.8), rgba(107, 63, 42, 0.8)), 
+                        url('https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 8%;
+            text-align: center;
+            color: var(--white);
+            margin-top: 4rem;
+        }
+
+        .festive-banner h2 {
+            color: var(--gold);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- WhatsApp Float --- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 10000;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--walnut-dark);
+            color: var(--off-white);
+            padding: 6rem 8% 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .footer-logo .logo-main { color: var(--off-white); }
+
+        .footer-col h4 {
+            color: var(--gold);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;
+        }
+
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 1rem; }
+        .footer-col ul li a {
+            color: var(--off-white);
+            text-decoration: none;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover { opacity: 1; color: var(--gold); }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            letter-spacing: 1px;
+        }
+
+        /* --- Custom Order Form --- */
+        .custom-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .custom-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 1rem;
+            background: var(--white);
+            border: 1px solid rgba(107, 63, 42, 0.1);
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        /* --- Page Management --- */
+        .page { display: none; }
+        .page.active { display: block; }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links { display: none; }
+            .hero-content { padding: 2.5rem; }
+            .hero-content h1 { font-size: 3rem; }
+            .custom-container { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/919000000000" class="whatsapp-float">
+        <i class="ph-bold ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- Nav -->
+    <nav>
+        <a href="#" class="logo" onclick="showPage('home')">
+            <span class="logo-main">HERITAGE</span>
+            <span class="logo-sub">Home Furniture</span>
+        </a>
+        <div class="nav-links">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('catalogue')">Catalogue</a>
+            <a href="#" onclick="showPage('custom')">Custom Orders</a>
+            <a href="#" onclick="showPage('about')">Our Story</a>
+            <a href="#" onclick="showPage('contact')">Contact</a>
+        </div>
+        <a href="#catalogue" class="cta-btn magnetic" onclick="showPage('catalogue')">View Collection</a>
+    </nav>
+
+    <!-- --- HOME PAGE --- -->
+    <main id="home-page" class="page active">
+        <header id="hero">
+            <div class="hero-content">
+                <span>SINCE 1995 • COIMBATORE</span>
+                <h1 class="serif">Transform Every Room Into a Story.</h1>
+                <p>Exquisite solid wood furniture handcrafted to last generations. Experience the warmth of heritage in your modern home.</p>
+                <a href="#catalogue" class="cta-btn" onclick="showPage('catalogue')">Explore Collection</a>
+            </div>
+        </header>
+
+        <div class="category-strip">
+            <div class="cat-item active" onclick="filterProducts('all', event)">All Furniture</div>
+            <div class="cat-item" onclick="filterProducts('living', event)">Living Room</div>
+            <div class="cat-item" onclick="filterProducts('bedroom', event)">Bedroom</div>
+            <div class="cat-item" onclick="filterProducts('dining', event)">Dining</div>
+            <div class="cat-item" onclick="filterProducts('office', event)">Office</div>
+            <div class="cat-item" onclick="filterProducts('outdoor', event)">Outdoor</div>
+        </div>
+
+        <section id="featured" class="reveal">
+            <div class="section-title">
+                <span>SIGNATURE PIECES</span>
+                <h2 class="serif">The Masterpiece Collection</h2>
+            </div>
+            <div class="product-grid" id="featured-grid">
+                <!-- 6 Featured Items -->
+            </div>
+        </section>
+
+        <div class="features">
+            <div class="feature-item">
+                <i class="ph ph-tree"></i>
+                <h4>Solid Wood</h4>
+                <p>Authentic Teak, Walnut, and Rosewood options.</p>
+            </div>
+            <div class="feature-item">
+                <i class="ph ph-pencil-line"></i>
+                <h4>Custom Sizes</h4>
+                <p>Tailored to fit your space perfectly.</p>
+            </div>
+            <div class="feature-item">
+                <i class="ph ph-truck"></i>
+                <h4>Home Delivery</h4>
+                <p>Safe & professional white-glove delivery.</p>
+            </div>
+            <div class="feature-item">
+                <i class="ph ph-credit-card"></i>
+                <h4>EMI Available</h4>
+                <p>Easy financing for your dream home.</p>
+            </div>
+        </div>
+
+        <section id="home-reveals">
+            <div class="section-title">
+                <span>INSPIRATION</span>
+                <h2 class="serif">Customer Home Reveals</h2>
+            </div>
+            <div class="reveals-grid">
+                <div class="reveal-card">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop" alt="Home Reveal">
+                    <div class="reveal-overlay">
+                        <p class="serif" style="font-size: 1.2rem; font-style: italic;">"The walnut dining set is the heart of our home. Truly premium quality!"</p>
+                        <span style="display: block; margin-top: 1rem; font-weight: 600;">— Mrs. Lakshmi, Saibaba Colony</span>
+                    </div>
+                </div>
+                <div class="reveal-card">
+                    <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1000&auto=format&fit=crop" alt="Home Reveal">
+                    <div class="reveal-overlay">
+                        <p class="serif" style="font-size: 1.2rem; font-style: italic;">"Finally found a sofa set that perfectly matches our heritage aesthetic."</p>
+                        <span style="display: block; margin-top: 1rem; font-weight: 600;">— Mr. Karthik, RS Puram</span>
+                    </div>
+                </div>
+                <div class="reveal-card">
+                    <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=1000&auto=format&fit=crop" alt="Home Reveal">
+                    <div class="reveal-overlay">
+                        <p class="serif" style="font-size: 1.2rem; font-style: italic;">"Their custom bed design was exactly what we visualized. Excellent craft."</p>
+                        <span style="display: block; margin-top: 1rem; font-weight: 600;">— Dr. Priya, Race Course</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="festive-banner">
+            <h2 class="serif">Festive Home Furnishing Deals</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Celebrate this season with up to 25% off on full home sets.</p>
+            <a href="https://wa.me/919000000000?text=I'm interested in Festive Deals" class="cta-btn" style="background: var(--gold); border-color: var(--gold);">Get Offer Code</a>
+        </div>
+    </main>
+
+    <!-- --- CATALOGUE PAGE --- -->
+    <main id="catalogue-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="section-title">
+                <span>OUR COLLECTION</span>
+                <h2 class="serif">Browse Catalogue</h2>
+            </div>
+            
+            <div class="category-strip" style="background: transparent; margin-bottom: 3rem;">
+                <div class="cat-item active" onclick="filterProducts('all', event)">All</div>
+                <div class="cat-item" onclick="filterProducts('living', event)">Sofas</div>
+                <div class="cat-item" onclick="filterProducts('bedroom', event)">Beds</div>
+                <div class="cat-item" onclick="filterProducts('dining', event)">Dining</div>
+                <div class="cat-item" onclick="filterProducts('office', event)">Office</div>
+            </div>
+
+            <div class="product-grid" id="catalogue-grid">
+                <!-- All products load here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- --- CUSTOM ORDER PAGE --- -->
+    <main id="custom-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="custom-container">
+                <div class="custom-info">
+                    <h2 class="serif" style="font-size: 3rem; margin-bottom: 2rem;">Bespoke Craftsmanship</h2>
+                    <p style="margin-bottom: 2rem;">Can't find exactly what you're looking for? Our master craftsmen specialize in bringing your unique visions to life. From specific wood types to unconventional dimensions, we do it all.</p>
+                    <ul style="list-style: none; margin-bottom: 2rem;">
+                        <li style="margin-bottom: 1rem;"><i class="ph ph-check-circle" style="color: var(--gold);"></i> Choice of Premium Wood (Teak, Rosewood, Mango)</li>
+                        <li style="margin-bottom: 1rem;"><i class="ph ph-check-circle" style="color: var(--gold);"></i> 3D Visualization Before Construction</li>
+                        <li style="margin-bottom: 1rem;"><i class="ph ph-check-circle" style="color: var(--gold);"></i> Lifetime Warranty on Solid Wood</li>
+                    </ul>
+                    <img src="https://images.unsplash.com/photo-1581428982868-e410dd047a90?q=80&w=1000&auto=format&fit=crop" alt="Workshop" style="width: 100%; border-radius: 10px;">
+                </div>
+                <div class="form-container">
+                    <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 2rem;">Customization Request</h3>
+                    <form class="custom-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="Your name">
+                        </div>
+                        <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="form-group">
+                                <label>Mobile Number</label>
+                                <input type="tel" placeholder="Phone">
+                            </div>
+                            <div class="form-group">
+                                <label>Wood Preference</label>
+                                <select>
+                                    <option>Teak Wood</option>
+                                    <option>Walnut</option>
+                                    <option>Sheesham</option>
+                                    <option>Rosewood</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Item Needed</label>
+                            <input type="text" placeholder="e.g. 6-Seater Dining Table">
+                        </div>
+                        <div class="form-group">
+                            <label>Description & Dimensions</label>
+                            <textarea rows="5" placeholder="Share your specific requirements..."></textarea>
+                        </div>
+                        <button type="submit" class="cta-btn">Send Design Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- --- ABOUT US PAGE --- -->
+    <main id="about-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="custom-container" style="align-items: center;">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" alt="Founder" style="width: 100%; box-shadow: -20px 20px 0 var(--gold);">
+                <div class="about-text">
+                    <span style="color: var(--gold); letter-spacing: 4px;">OUR STORY</span>
+                    <h2 class="serif" style="font-size: 3rem; margin: 1rem 0 2rem;">A Heritage of Wood & Passion</h2>
+                    <p style="margin-bottom: 1.5rem;">Born in a small workshop in Coimbatore in 1995, Heritage Home Furniture was founded with a single mission: to prove that Indian craftsmanship can rival the world's finest.</p>
+                    <p style="margin-bottom: 1.5rem;">We believe furniture isn't just about utility; it's about the soul of a home. Every joint we carve and every surface we polish is a testament to our dedication to quality. We use only seasoned, sustainably sourced timber to ensure your investment lasts for generations.</p>
+                    <div style="margin-top: 3rem;">
+                        <h4 class="serif" style="font-size: 1.5rem;">M. Senthil Kumar</h4>
+                        <p style="color: var(--gold); font-weight: 600;">Founder & Lead Craftsman</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- --- CONTACT PAGE --- -->
+    <main id="contact-page" class="page">
+        <section style="padding-top: 10rem;">
+            <div class="section-title">
+                <span>VISIT US</span>
+                <h2 class="serif">The Experience Centre</h2>
+            </div>
+            <div class="custom-container">
+                <div class="contact-info">
+                    <div style="margin-bottom: 3rem;">
+                        <h4 class="serif" style="font-size: 1.5rem; margin-bottom: 1rem;">Showroom Address</h4>
+                        <p>108, Avinashi Road, Opposite KMCH,<br>Coimbatore, Tamil Nadu 641014</p>
+                    </div>
+                    <div style="margin-bottom: 3rem;">
+                        <h4 class="serif" style="font-size: 1.5rem; margin-bottom: 1rem;">Hours of Operation</h4>
+                        <p>Monday - Saturday: 10:00 AM - 9:00 PM<br>Sunday: 11:00 AM - 7:00 PM</p>
+                    </div>
+                    <a href="https://wa.me/919000000000" class="cta-btn" style="display: block; text-align: center;">Chat for Directions</a>
+                </div>
+                <div style="width: 100%; height: 400px; background: #ddd; display: flex; align-items: center; justify-content: center;">
+                    <p>Google Maps Placeholder</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo footer-logo" style="margin-bottom: 2rem;">
+                    <span class="logo-main">HERITAGE</span>
+                </a>
+                <p style="opacity: 0.7;">Crafting homes since 1995. Premium wooden furniture designed for comfort and heritage.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Collections</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('catalogue')">Living Room</a></li>
+                    <li><a href="#" onclick="showPage('catalogue')">Bedroom Sets</a></li>
+                    <li><a href="#" onclick="showPage('catalogue')">Dining Collection</a></li>
+                    <li><a href="#" onclick="showPage('custom')">Custom Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Information</h4>
+                <ul>
+                    <li><a href="#" onclick="showPage('about')">About Our Story</a></li>
+                    <li><a href="#">Delivery & Assembly</a></li>
+                    <li><a href="#">Warranty Details</a></li>
+                    <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Let's Chat</h4>
+                <p style="margin-bottom: 1.5rem;">Have a specific requirement? Send us a message on WhatsApp for instant support.</p>
+                <a href="https://wa.me/919000000000" class="cta-btn" style="display: block; text-align: center; border-color: var(--gold); background: var(--gold);">Message Us</a>
+            </div>
+        </div>
+        <div class="copyright">
+            © 2026 Heritage Home Furniture Coimbatore. Designed by Antigravity Design Lab.
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Regal Teak Sofa Set", category: "living", material: "Burma Teak", size: "3+1+1 Seater", img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop" },
+            { id: 2, name: "Majestic Walnut Bed", category: "bedroom", material: "Solid Walnut", size: "King Size", img: "https://images.unsplash.com/photo-1505693415918-b73b0d78fe97?q=80&w=1000&auto=format&fit=crop" },
+            { id: 3, name: "Imperial Dining Table", category: "dining", material: "Indian Rosewood", size: "6-Seater", img: "https://images.unsplash.com/photo-1617806118233-f8e137453f9c?q=80&w=1000&auto=format&fit=crop" },
+            { id: 4, name: "The Artisan TV Unit", category: "living", material: "Mango Wood", size: "Customizable", img: "https://images.unsplash.com/photo-1593060541135-467657159781?q=80&w=1000&auto=format&fit=crop" },
+            { id: 5, name: "Executive Study Desk", category: "office", material: "Sheesham Wood", size: "4ft x 2.5ft", img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=1000&auto=format&fit=crop" },
+            { id: 6, name: "Outdoor Balcony Set", category: "outdoor", material: "Weather-proof Teak", size: "Compact", img: "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=1000&auto=format&fit=crop" }
+        ];
+
+        function loadProducts(filter = 'all') {
+            const featuredGrid = document.getElementById('featured-grid');
+            const catalogueGrid = document.getElementById('catalogue-grid');
+            
+            if (featuredGrid) {
+                featuredGrid.innerHTML = '';
+                products.slice(0, 6).forEach(p => {
+                    featuredGrid.innerHTML += createProductCard(p);
+                });
+            }
+
+            if (catalogueGrid) {
+                catalogueGrid.innerHTML = '';
+                const filtered = filter === 'all' ? products : products.filter(p => p.category === filter);
+                filtered.forEach(p => {
+                    catalogueGrid.innerHTML += createProductCard(p);
+                });
+            }
+        }
+
+        function createProductCard(p) {
+            return `
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="${p.img}" alt="${p.name}" onerror="this.src='https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=500&auto=format&fit=crop';">
+                    </div>
+                    <div class="product-info">
+                        <h3>${p.name}</h3>
+                        <p>${p.material} | ${p.size}</p>
+                        <a href="https://wa.me/919000000000?text=I'm interested in ${p.name}" class="wa-btn">
+                            <i class="ph ph-whatsapp-logo"></i> Get Quote on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        function filterProducts(category, event) {
+            const items = event.target.parentElement.querySelectorAll('.cat-item');
+            items.forEach(i => i.classList.remove('active'));
+            event.target.classList.add('active');
+            loadProducts(category);
+        }
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId + '-page').classList.add('active');
+            window.scrollTo(0,0);
+        }
+
+        // --- Magnetic Effect ---
+        function initMagnetic() {
+            const magnetics = document.querySelectorAll('.magnetic');
+            magnetics.forEach(el => {
+                el.addEventListener('mousemove', (e) => {
+                    const rect = el.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+                    el.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+                });
+                el.addEventListener('mouseleave', () => el.style.transform = `translate(0, 0)`);
+            });
+        }
+
+        // --- Reveal Logic ---
+        function initReveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.1 });
+            reveals.forEach(r => observer.observe(r));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadProducts();
+            initMagnetic();
+            initReveal();
+        });
+    </script>
+</body>
+</html>
